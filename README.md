@@ -1,5 +1,5 @@
 # seguranca_login_php
-<<<<<<< HEAD
+
 
 Prevenindo Ataques
 
@@ -14,6 +14,4 @@ Prevenindo Ataques
         https://webdesign.tutsplus.com/pt/tutorials/how-to-integrate-no-captcha-recaptcha-in-your-website--cms-23024
 
 Link da Aplicação
-=======
->>>>>>> d94115ee10b2325740e66e623cbb86432914cfa2
 http://handersonsilva.com/seguranca_login_php/
