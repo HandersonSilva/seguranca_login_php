@@ -51,7 +51,9 @@
             //verificar o response
             $resp = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'],$_POST['g-recaptcha-response']);
              print_r( $resp);
-           
+             if ($resp->isSuccess()){
+                echo "Olá Senhor, " . $_POST["name"] .", obrigado por enviar seu formulário!";
+             }
                // se submetido, verifique a resposta
             if ($_POST["g-recaptcha-response"]) {
                 $response = $reCaptcha->verifyResponse(
