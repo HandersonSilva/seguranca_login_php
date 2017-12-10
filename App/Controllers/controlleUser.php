@@ -53,6 +53,8 @@
                         $_SERVER["REMOTE_ADDR"],
                         $_POST["g-recaptcha-response"]
                     );
+                    echo "response = ".$response;
+
             }else{
                 echo "Erro no Post do response";
             }
