@@ -12,8 +12,8 @@
         public function captcha(){
                   session_start();
                     $securimage = new securimage();
-                    $user = $_POST['name'];
-                    echo $user;
+                   
+                    
                     $capctha = isset($_POST['captcha_code'])? $_POST['captcha_code']:"Nada";
                     if ($securimage->check($capctha) == false) {
                         // the code was incorrect
