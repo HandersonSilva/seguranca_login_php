@@ -141,6 +141,7 @@ class ReCaptcha
             $recaptchaResponse->errorCodes = $answers [error-codes];
         }
 
+        echo "recaptchaResponse = ".$recaptchaResponse;
         return $recaptchaResponse;
     }
 }
