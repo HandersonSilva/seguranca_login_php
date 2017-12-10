@@ -46,18 +46,17 @@
             // verifique a chave secreta
             $reCaptcha = new ReCaptcha($secret);
             echo "Server = ". $_SERVER["REMOTE_ADDR"];
-
+            //verificar o response
+            $resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+            echo "resp = ".$resp;
              // se submetido, verifique a resposta
-            if ($_POST["g-recaptcha-response"]) {
-               $response = $reCaptcha->verifyResponse(
-                        $_SERVER["REMOTE_ADDR"],
-                        $_POST["g-recaptcha-response"]
-                    );
-                    echo "response = ".$response;
+           /* if(){
+             
+                   
 
             }else{
                 echo "Erro no Post do response";
-            }
+            }*/
 
             //Verificar o resonse
             if ($response != null && $response->success) {
