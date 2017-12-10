@@ -93,7 +93,7 @@ class ReCaptcha
      */
     private function _submitHTTPGet($path, $data)
     {
-        echo "Entrou em submitget";
+     
         $req = $this->_encodeQS($data);
         $response = file_get_contents($path . $req);
       
@@ -111,10 +111,10 @@ class ReCaptcha
      */
     public function verifyResponse($remoteIp, $response)
     {
-        echo " entrou na função verifica" ;
+       
         // Discard empty solution submissions
         if ($response == null || strlen($response) == 0) {
-            echo "Entrou no response nulo";
+            
             $recaptchaResponse = new ReCaptchaResponse();
             $recaptchaResponse->success = false;
             $recaptchaResponse->errorCodes = 'missing-input';
@@ -141,7 +141,7 @@ class ReCaptcha
             $recaptchaResponse->errorCodes = $answers [error-codes];
         }
 
-       //print_r( $recaptchaResponse);
+       
         return $recaptchaResponse;
     }
 }
