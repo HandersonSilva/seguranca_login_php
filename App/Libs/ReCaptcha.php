@@ -56,7 +56,7 @@ class ReCaptcha
      * @param string $secret shared secret between site and ReCAPTCHA server.
      */
     function ReCaptcha($secret)
-    { echo "entrou na funcão recaptcha";
+    { 
         if ($secret == null || $secret == "") {
             die("To use reCAPTCHA you must get an API key from <a href='"
                 . self::$_signupUrl . "'>" . self::$_signupUrl . "</a>");
@@ -96,7 +96,7 @@ class ReCaptcha
         echo "Entrou em submitget";
         $req = $this->_encodeQS($data);
         $response = file_get_contents($path . $req);
-        echo "Response = ".$response;
+       // echo "Response = ".$response;
         return $response;
     }
 
@@ -141,7 +141,7 @@ class ReCaptcha
             $recaptchaResponse->errorCodes = $answers [error-codes];
         }
 
-        echo "recaptchaResponse = ".$recaptchaResponse;
+       print_r( $recaptchaResponse);
         return $recaptchaResponse;
     }
 }
