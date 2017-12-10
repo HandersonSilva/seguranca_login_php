@@ -45,6 +45,7 @@
 
             // verifique a chave secreta
             $reCaptcha = new ReCaptcha($secret);
+            $this->reCaptcha->ReCaptcha($secret);
             //echo "Server = ". $_SERVER["REMOTE_ADDR"];
             //verificar o response
             $resp = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'],$_POST['g-recaptcha-response']);
