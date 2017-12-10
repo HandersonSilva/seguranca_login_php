@@ -49,11 +49,11 @@
 
              // se submetido, verifique a resposta
             if ($_POST["g-recaptcha-response"]) {
-                $response = $reCaptcha->verifyResponse(
+               $this->response = $reCaptcha->verifyResponse(
                         $_SERVER["REMOTE_ADDR"],
                         $_POST["g-recaptcha-response"]
                     );
-                    echo "response = ".$response;
+                    echo "response = ".$this->response;
 
             }else{
                 echo "Erro no Post do response";
