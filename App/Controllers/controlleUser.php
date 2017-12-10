@@ -45,8 +45,9 @@
 
             // verifique a chave secreta
             $reCaptcha = new ReCaptcha($secret);
+            echo "Server = ". $_SERVER["REMOTE_ADDR"];
 
-            // se submetido, verifique a resposta
+             // se submetido, verifique a resposta
             if ($_POST["g-recaptcha-response"]) {
                 $response = $reCaptcha->verifyResponse(
                         $_SERVER["REMOTE_ADDR"],
@@ -60,7 +61,7 @@
             if ($response != null && $response->success) {
               echo "Olá, " . $_POST["name"] .", obrigado por enviar seu formulário!";
             }else{
-                echo "Erro response";
+                echo "Erro response = ".($response;
             }
 
         }
