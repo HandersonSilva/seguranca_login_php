@@ -43,36 +43,28 @@
             // resposta vazia
             $response = null;
 
-            // verifique a chave secreta
+            
             $reCaptcha = new ReCaptcha();
+            // verifique a chave secreta
             $reCaptcha->ReCaptcha($secret);
-            //echo "Server = ". $_SERVER["REMOTE_ADDR"];
+            
             //verificar o response
             $resp = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'],$_POST['g-recaptcha-response']);
              print_r( $resp);
-            if ($resp->isSuccess()){
-                // If the response is a success, that's it!
-                echo"<h2>Success!</h2>";
-              
-            }else{
-                echo"Not sucess";
-            }
-               
+           
+               // se submetido, verifique a resposta
+            if ($_POST["g-recaptcha-response"]) {
+                $response = $reCaptcha->verifyResponse(
+                        $_SERVER["REMOTE_ADDR"],
+                        $_POST["g-recaptcha-response"]
+                    );
+                }
                 
-             // se submetido, verifique a resposta
-           /* if(){
-             
-                   
-
-            }else{
-                echo "Erro no Post do response";
-            }*/
-
-            //Verificar o resonse
+            //Verificar o response
             if ($response != null && $response->success) {
               echo "Olá, " . $_POST["name"] .", obrigado por enviar seu formulário!";
             }else{
-                echo "Erro response = ".$response;
+                echo "Erro response = ".$response->errorCodes;
             }
 
         }
