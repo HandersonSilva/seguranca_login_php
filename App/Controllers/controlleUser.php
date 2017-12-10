@@ -33,9 +33,9 @@
 
         public function reCaptchaGoogle(){
             //Pegando os valores para teste
-            foreach ($_POST as $key => $value) {
+           /* foreach ($_POST as $key => $value) {
                 echo '<p><strong>' . $key.':</strong> '.$value.'</p>';
-            }
+            }*/
 
             // sua chave secreta
             $secret = "6Lc4TTwUAAAAADzx6Tmuski4senGxgadKNvMX7hD";
