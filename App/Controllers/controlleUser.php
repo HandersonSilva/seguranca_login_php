@@ -38,7 +38,7 @@
             }
 
             // sua chave secreta
-            $secret = "6Lc4TTwUAAAAADzx6Tmuski4senGxgadKNvMX7hD";
+            $secret = "6Lc4TTwUAAAAANtJO4NqxUlpcmNjFe-CLO5pnRgf";
 
             // resposta vazia
             $response = null;
