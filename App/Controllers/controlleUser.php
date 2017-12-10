@@ -38,7 +38,7 @@
             }
 
             // sua chave secreta
-            $secret = "6Lc4TTwUAAAAANtJO4NqxUlpcmNjFe-CLO5pnRgf";
+            $secret = "6Lc4TTwUAAAAADzx6Tmuski4senGxgadKNvMX7hD";
 
             // resposta vazia
             $response = null;
@@ -60,7 +60,7 @@
             }
 
             //Verificar o resonse
-            if ($response != null && $response->success()) {
+            if ($response != null && $response->success {
               echo "Olá, " . $_POST["name"] .", obrigado por enviar seu formulário!";
             }else{
                 echo "Erro response = ".$response;
