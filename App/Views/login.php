@@ -1,5 +1,11 @@
 <?php
      session_start();
+
+   
+     foreach ($_POST as $key => $value) {
+         echo '<p><strong>' . $key.':</strong> '.$value.'</p>';
+     }
+   
  ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +35,7 @@
             
                         <div >
                             <label><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <input type="text" placeholder="Enter Username" name="name" required>
             
                             <label><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
