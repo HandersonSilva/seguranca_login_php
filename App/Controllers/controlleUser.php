@@ -20,7 +20,7 @@
                         // you should handle the error so that the form processor doesn't continue
                       
                         // or you can use the following code if there is no validation or you do not know how
-                        echo "The security code entered was incorrect.<br /><br />";
+                        echo "O Codigo do Captcha PHP está Incorreto.<br /><br />";
                         echo $capctha;
                         exit;
                       }
@@ -50,9 +50,9 @@
             
             //verificar o response
             $resp = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'],$_POST['g-recaptcha-response']);
-             print_r( $resp);
+             
              if ($resp->success == true){
-                echo "Olá Senhor, " . $_POST["name"] .", obrigado por enviar seu formulário!";
+                echo "Olá Senhor, " . $_POST["name"] .", Recaptcha OK!!!";
              }else{
                  echo "Ocorreu Um Erro com o Recaptcha (Erro)=>".$resp->errorCodes;
              }
