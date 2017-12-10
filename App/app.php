@@ -19,7 +19,7 @@
                    $User = new controlleUser();
 
                    $User->captcha();
-                   
+                   $User->reCaptchaGoogle();                   
                     
                     break;
                 default:
