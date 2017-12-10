@@ -2,7 +2,7 @@
     namespace App\controllers;
     use App\Models\Entidades\usuario;
     use App\Libs\securimage\securimage;
-    use App\Libs\recaptchalib;
+    use App\Libs\ReCaptcha;
    
   
     class controlleUser{
