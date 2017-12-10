@@ -53,6 +53,8 @@
              print_r( $resp);
              if ($resp->success == true){
                 echo "Olá Senhor, " . $_POST["name"] .", obrigado por enviar seu formulário!";
+             }else{
+                 echo "Ocorreu Um Erro com o Recaptcha (Erro)=>".$resp->errorCodes;
              }
             
                 
