@@ -24,7 +24,7 @@
                         
                         exit;
                       }
-                      echo "codigo Captcha correto!!!<br/>";
+                      echo "codigo Captcha PHP está correto!!!<br/>";
                       echo "Login Autorizado...";
 
                       
