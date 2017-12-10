@@ -54,7 +54,7 @@
              if ($resp->success == true){
                 echo "Olá Senhor, " . $_POST["name"] .", Recaptcha OK!!!<br/>";
              }else{
-                 echo "<br/>Ocorreu Um Erro com o Recaptcha (Erro)=>".$resp->errorCodes;
+                 echo "Ocorreu Um Erro com o Recaptcha (Erro)=>".$resp->errorCodes."<br/>";
              }
             
                 
