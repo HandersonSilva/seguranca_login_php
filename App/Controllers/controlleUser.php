@@ -2,6 +2,7 @@
     namespace App\controllers;
     use App\Models\Entidades\usuario;
     use App\Libs\securimage\securimage;
+    use App\Libs\recaptchalib;
    
   
     class controlleUser{
@@ -31,10 +32,33 @@
                     }
 
         public function reCaptchaGoogle(){
-            
-            foreach ($_POST as $key => $value) {
+            //Pegando os valores para teste
+           /* foreach ($_POST as $key => $value) {
                 echo '<p><strong>' . $key.':</strong> '.$value.'</p>';
+            }*/
+
+            // sua chave secreta
+            $secret = "6Lc4TTwUAAAAANtJO4NqxUlpcmNjFe-CLO5pnRgf";
+
+            // resposta vazia
+            $response = null;
+
+            // verifique a chave secreta
+            $reCaptcha = new ReCaptcha($secret);
+
+            // se submetido, verifique a resposta
+            if ($_POST["g-recaptcha-response"]) {
+                $response = $reCaptcha->verifyResponse(
+                        $_SERVER["REMOTE_ADDR"],
+                        $_POST["g-recaptcha-response"]
+                    );
             }
+
+            //Verificar o resonse
+            if ($response != null && $response->success) {
+              echo "Olá, " . $_POST["name"] .", obrigado por enviar seu formulário!";
+            }
+
         }
 
           

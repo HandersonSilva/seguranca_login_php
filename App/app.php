@@ -18,7 +18,7 @@
                 case "logar":
                    $User = new controlleUser();
                    $User->reCaptchaGoogle();   
-                   $User->captcha();
+                   //$User->captcha();
                                   
                     
                     break;
