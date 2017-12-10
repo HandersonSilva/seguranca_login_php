@@ -36,8 +36,10 @@
 namespace App\Libs;
 class ReCaptchaResponse
 {
+   
     public $success;
     public $errorCodes;
+   
 }
 
 class ReCaptcha
@@ -110,6 +112,7 @@ class ReCaptcha
         echo " entrou na função verifica" ;
         // Discard empty solution submissions
         if ($response == null || strlen($response) == 0) {
+            echo "Entrou no response nulo";
             $recaptchaResponse = new ReCaptchaResponse();
             $recaptchaResponse->success = false;
             $recaptchaResponse->errorCodes = 'missing-input';
