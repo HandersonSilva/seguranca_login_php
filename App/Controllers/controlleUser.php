@@ -61,7 +61,7 @@
             if ($response != null && $response->success) {
               echo "Olá, " . $_POST["name"] .", obrigado por enviar seu formulário!";
             }else{
-                echo "Erro response = ".($response;
+                echo "Erro response = ".$response;
             }
 
         }
