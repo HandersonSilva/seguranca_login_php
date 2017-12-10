@@ -38,7 +38,7 @@
             }
 
             // sua chave secreta
-            $secret = "6Lc4TTwUAAAAANtJO4NqxUlpcmNjFe-CLO5pnRgf";
+            $secret = "6Lc4TTwUAAAAADzx6Tmuski4senGxgadKNvMX7hD";
 
             // resposta vazia
             $response = null;
@@ -47,8 +47,15 @@
             $reCaptcha = new ReCaptcha($secret);
             //echo "Server = ". $_SERVER["REMOTE_ADDR"];
             //verificar o response
-            $resp = $reCaptcha->verifyResponse($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+            $resp = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'],$_POST['g-recaptcha-response']);
             echo "resp = ".$resp;
+            if ($resp->isSuccess()){
+                // If the response is a success, that's it!
+                echo"<h2>Success!</h2>";
+              
+            }
+               
+                
              // se submetido, verifique a resposta
            /* if(){
              
