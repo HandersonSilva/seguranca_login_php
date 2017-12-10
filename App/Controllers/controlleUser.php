@@ -21,7 +21,7 @@
                       
                         // or you can use the following code if there is no validation or you do not know how
                         echo "O Codigo do Captcha PHP está Incorreto.<br /><br />";
-                        echo $capctha;
+                        
                         exit;
                       }
                       echo "codigo Captcha correto!!!<br/>";
@@ -52,9 +52,9 @@
             $resp = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'],$_POST['g-recaptcha-response']);
              
              if ($resp->success == true){
-                echo "Olá Senhor, " . $_POST["name"] .", Recaptcha OK!!!";
+                echo "Olá Senhor, " . $_POST["name"] .", Recaptcha OK!!!<br/>";
              }else{
-                 echo "Ocorreu Um Erro com o Recaptcha (Erro)=>".$resp->errorCodes;
+                 echo "<br/>Ocorreu Um Erro com o Recaptcha (Erro)=>".$resp->errorCodes;
              }
             
                 
