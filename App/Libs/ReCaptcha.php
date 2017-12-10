@@ -96,7 +96,7 @@ class ReCaptcha
         echo "Entrou em submitget";
         $req = $this->_encodeQS($data);
         $response = file_get_contents($path . $req);
-       // echo "Response = ".$response;
+      
         return $response;
     }
 
@@ -141,7 +141,7 @@ class ReCaptcha
             $recaptchaResponse->errorCodes = $answers [error-codes];
         }
 
-       print_r( $recaptchaResponse);
+       //print_r( $recaptchaResponse);
         return $recaptchaResponse;
     }
 }

@@ -54,20 +54,9 @@
              if ($resp->success == true){
                 echo "Olá Senhor, " . $_POST["name"] .", obrigado por enviar seu formulário!";
              }
-               // se submetido, verifique a resposta
-            if ($_POST["g-recaptcha-response"]) {
-                $response = $reCaptcha->verifyResponse(
-                        $_SERVER["REMOTE_ADDR"],
-                        $_POST["g-recaptcha-response"]
-                    );
-                }
+            
                 
-            //Verificar o response
-            if ($response != null && $response->success) {
-              echo "Olá, " . $_POST["name"] .", obrigado por enviar seu formulário!";
-            }else{
-                echo "Erro response = ".$response->errorCodes;
-            }
+          
 
         }
 
