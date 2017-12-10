@@ -29,7 +29,7 @@
 
                       
                        
-                    }
+         }
 
         public function reCaptchaGoogle(){
             //Pegando os valores para teste
@@ -49,18 +49,18 @@
 
              // se submetido, verifique a resposta
             if ($_POST["g-recaptcha-response"]) {
-               $this->response = $reCaptcha->verifyResponse(
+               $response = $reCaptcha->verifyResponse(
                         $_SERVER["REMOTE_ADDR"],
                         $_POST["g-recaptcha-response"]
                     );
-                    echo "response = ".$this->response;
+                    echo "response = ".$response;
 
             }else{
                 echo "Erro no Post do response";
             }
 
             //Verificar o resonse
-            if ($response != null && $response->success) {
+            if ($response != null && $response->success()) {
               echo "Olá, " . $_POST["name"] .", obrigado por enviar seu formulário!";
             }else{
                 echo "Erro response = ".$response;
