@@ -93,8 +93,10 @@ class ReCaptcha
      */
     private function _submitHTTPGet($path, $data)
     {
+        echo "Entrou em submitget";
         $req = $this->_encodeQS($data);
         $response = file_get_contents($path . $req);
+        echo "Response = ".$response;
         return $response;
     }
 
@@ -120,6 +122,7 @@ class ReCaptcha
         }
 
         $getResponse = $this->_submitHttpGet(
+            
             self::$_siteVerifyUrl,
             array (
                 'secret' => $this->_secret,
