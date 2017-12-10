@@ -107,6 +107,7 @@ class ReCaptcha
      */
     public function verifyResponse($remoteIp, $response)
     {
+        echo " entrou na função verifica" ;
         // Discard empty solution submissions
         if ($response == null || strlen($response) == 0) {
             $recaptchaResponse = new ReCaptchaResponse();
