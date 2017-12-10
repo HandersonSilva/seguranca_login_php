@@ -48,7 +48,7 @@
             //echo "Server = ". $_SERVER["REMOTE_ADDR"];
             //verificar o response
             $resp = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'],$_POST['g-recaptcha-response']);
-            echo "resp = ".$resp;
+             print_r( $resp);
             if ($resp->isSuccess()){
                 // If the response is a success, that's it!
                 echo"<h2>Success!</h2>";
