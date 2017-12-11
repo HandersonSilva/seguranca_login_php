@@ -19,17 +19,18 @@
             utf8_decode() = ajustar os caracteres acentuado 
             htmlentities() = converte simbolos html em entidades html
             addslashes() = troca ' ou " por \' ou \"
-  #Criptografia de Senhas
+            
+ # Criptografia de Senhas
         Criptografia com:
             md5 = tamanho 32 caracteres
             sha1 = tamanho 40 caracteres
             base64; tamanho relativo a senha original (Pode ser descriptografada facilmente)
-
-  #Prevenir Mysql Inject
+            
+# Prevenir Mysql Inject
         Para prevenir o mysql inject basta usar a função validaString() da classe App/Libs/funcao.php
 
 
     
 
-#Link da Aplicação
+# Link da Aplicação
 http://handersonsilva.com/seguranca_login_php/
