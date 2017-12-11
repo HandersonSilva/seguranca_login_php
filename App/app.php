@@ -16,9 +16,14 @@
             switch ($passo){
                
                 case "logar":
-                   $User = new controlleUser();
-                   $User->reCaptchaGoogle();   
-                   $User->captcha();
+                   $user = new controlleUser();
+                    //Prevenindo Cross-Site Script(XSS)
+                    $user->validarDadosString();
+                   //chamada da função recaptcha do google
+                   $user->reCaptchaGoogle();   
+                   //chamada da função captcha da biblioteca phpcaptcha
+                   $user->captcha();
+                  
                                   
                     
                     break;

@@ -3,6 +3,7 @@
     use App\Models\Entidades\usuario;
     use App\Libs\securimage\securimage;
     use App\Libs\ReCaptcha;
+    use App\Libs\funcao;
    
   
     class controlleUser{
@@ -60,6 +61,21 @@
                 
           
 
+        }
+        public function validarDadosString(){
+            //pegando os dados via post
+            $usuario = $_POST['name'];
+            $senha = $_POST['psw'];
+            
+           // echo "Variaveis sem tratamento  Usuario = ".$usuario." , Senha =  ".$senha."<br/>";
+            //tratando as variaveis
+            $validaString  = new funcao();
+
+            $usuarioV = $validaString->validaString( $usuario );
+            $senhaV = $validaString->validaString( $senha );
+
+            echo "Variaveis tratada com a Função validaString()<br/>  Usuario = ".$usuarioV." , Senha =  ".$senhaV."<br/>";
+            
         }
 
           
