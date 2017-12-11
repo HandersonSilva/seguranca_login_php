@@ -21,11 +21,11 @@
                         // you should handle the error so that the form processor doesn't continue
                       
                         // or you can use the following code if there is no validation or you do not know how
-                        echo "O Codigo do Captcha PHP está Incorreto.<br /><br />";
+                        echo "<hr>O Codigo do Captcha PHP está Incorreto.<br /><br />";
                         
                         exit;
                       }
-                      echo "codigo Captcha PHP está correto!!!<br/>";
+                      echo "<hr>codigo Captcha PHP está correto!!!<br/>";
                       echo "Login Autorizado...";
 
                       
@@ -53,9 +53,9 @@
             $resp = $reCaptcha->verifyResponse($_SERVER['REMOTE_ADDR'],$_POST['g-recaptcha-response']);
              
              if ($resp->success == true){
-                echo "Olá Senhor, " . $_POST["name"] .", Recaptcha OK!!!<br/>";
+                echo "<hr>Olá Senhor, " . $_POST["name"] .", Recaptcha OK!!!<br/>";
              }else{
-                 echo "Ocorreu Um Erro com o Recaptcha (Erro)=>".$resp->errorCodes."<br/>";
+                 echo "<hr>Ocorreu Um Erro com o Recaptcha (Erro)=>".$resp->errorCodes."<br/>";
              }
             
                 
@@ -74,9 +74,42 @@
             $usuarioV = $validaString->validaString( $usuario );
             $senhaV = $validaString->validaString( $senha );
 
-            echo "Variaveis tratada com a Função validaString()<br/>  Usuario = ".$usuarioV." , Senha =  ".$senhaV."<br/>";
+            echo "<hr>Variaveis tratada com a Função validaString()<br/>  Usuario = ".$usuarioV." , Senha =  ".$senhaV."<br/>";
             
         }
 
+        public function cryptoSenhaMd5(){
+            //Pegando a variavel
+            $senha = isset($_POST['psw'])? $_POST['psw']:"";
+            
+            if($senha != ""){
+                $senhaMd5 = md5($senha);
+                echo "<hr>Senha criptografada em md5 = ".$senhaMd5."<br/>";
+            }
+
+            
+        }
+        public function cryptoSenhaSha1(){
+            //Pegando a variavel
+            $senha = isset($_POST['psw'])? $_POST['psw']:"";
+            
+            if($senha != ""){
+                $senhaSha1 = sha1($senha);
+                echo "<hr>Senha criptografada em Sha1 = ".$senhaSha1."<br/>";
+            }
+
+            
+        }
+        public function cryptoSenhaBase64(){
+            //Pegando a variavel
+            $senha = isset($_POST['psw'])? $_POST['psw']:"";
+            
+            if($senha != ""){
+                $senhaBase = base64_encode($senha);
+                echo "<hr>Senha criptografada em Base64 = ".$senhaBase."<br/>";
+            }
+
+            
+        }
           
     }

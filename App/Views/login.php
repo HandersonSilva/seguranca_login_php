@@ -32,9 +32,9 @@
                             <input type="text" placeholder="Enter Username" name="name" required>
             
                             <label><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-                                
-                            <button type="submit">Login</button>
+                            <input type="password" maxlength="20" placeholder="Enter Password" name="psw" required>
+                                 
+                           
                             <input type="checkbox" checked="checked"> Remember me
                         </div>
             
@@ -52,6 +52,9 @@
                         </div>
                         <!--Não funciona em local host-->
                         <div class="g-recaptcha" data-sitekey="6Lc4TTwUAAAAANtJO4NqxUlpcmNjFe-CLO5pnRgf"></div>
+                        <div >
+                            <button type="submit">Login</button>
+                        </div>
                         </form>
         </div>
         <div class="col-md-3"></div>

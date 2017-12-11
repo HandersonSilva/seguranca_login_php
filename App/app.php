@@ -19,10 +19,16 @@
                    $user = new controlleUser();
                     //Prevenindo Cross-Site Script(XSS)
                     $user->validarDadosString();
-                   //chamada da função recaptcha do google
-                   $user->reCaptchaGoogle();   
-                   //chamada da função captcha da biblioteca phpcaptcha
-                   $user->captcha();
+                    //criptografia em md5
+                    $user-> cryptoSenhaMd5();
+                    //criptografia em sha1
+                    $user->cryptoSenhaSha1();
+                     //criptografia em base64
+                    $user->cryptoSenhaBase64();
+                     //chamada da função recaptcha do google
+                    $user->reCaptchaGoogle();   
+                    //chamada da função captcha da biblioteca phpcaptcha
+                    $user->captcha();
                   
                                   
                     
