@@ -2,8 +2,6 @@
     Objetivo dessa aplicação é mostrar como se prevenir de alguns ataques basicos em um Formulário de Login em  aplicações Web.
 
 
-#Prevenindo Ataques
-
     
    # Prevenindo Spoofing com Captcha
         Libs:
