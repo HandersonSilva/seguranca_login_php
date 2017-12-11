@@ -25,6 +25,8 @@
                     $user->cryptoSenhaSha1();
                      //criptografia em base64
                     $user->cryptoSenhaBase64();
+                    //Prevenir sql inject
+                    $user->prevenirSqlInject();
                      //chamada da função recaptcha do google
                     $user->reCaptchaGoogle();   
                     //chamada da função captcha da biblioteca phpcaptcha

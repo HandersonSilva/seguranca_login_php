@@ -1,4 +1,5 @@
 # seguranca_login_php
+    Objetivo dessa aplicação é mostrar como se prevenir de alguns ataques basicos em um Formulário de Login em  aplicações Web.
 
 
 #Prevenindo Ataques
@@ -25,6 +26,9 @@
             md5 = tamanho 32 caracteres
             sha1 = tamanho 40 caracteres
             base64; tamanho relativo a senha original (Pode ser descriptografada facilmente)
+
+  #Prevenir Mysql Inject
+        Para prevenir o mysql inject basta usar a função validaString() da classe App/Libs/funcao.php
 
 
     

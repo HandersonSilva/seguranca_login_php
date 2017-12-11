@@ -11,7 +11,7 @@
      
 
         public function captcha(){
-                  session_start();
+                 
                     $securimage = new securimage();
                    
                     
@@ -25,7 +25,7 @@
                         
                         exit;
                       }
-                      echo "<hr>codigo Captcha PHP está correto!!!<br/>";
+                      echo "<hr>Codigo Captcha PHP está correto!!!<br/>";
                       echo "Login Autorizado...";
 
                       
@@ -55,7 +55,7 @@
              if ($resp->success == true){
                 echo "<hr>Olá Senhor, " . $_POST["name"] .", Recaptcha OK!!!<br/>";
              }else{
-                 echo "<hr>Ocorreu Um Erro com o Recaptcha (Erro)=>".$resp->errorCodes."<br/>";
+                 echo "<hr>Ocorreu Um erro com o recaptcha (Erro)=>".$resp->errorCodes."<br/>";
              }
             
                 
@@ -107,9 +107,18 @@
             if($senha != ""){
                 $senhaBase = base64_encode($senha);
                 echo "<hr>Senha criptografada em Base64 = ".$senhaBase."<br/>";
-            }
+            } 
+        }
+        public function prevenirSqlInject(){
+            //para prevenir sql inject com o mysqli basta usar a função validaString() da classe App/Libs/funcao.php
+           
+            $validaString  = new funcao();
+            //pegando os dados via post
+            $usuario = $validaString->validaString( $_POST['name']);
+            $senha = $validaString->validaString( $_POST['psw']);
 
-            
+            echo "<hr>Variaveis livre de Sql Inject ( Usuario = ".$usuario.", Senha = ". $senha.")<br/>";                                    
+            //realizar a inserção no banco
         }
           
     }
